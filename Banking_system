@@ -1,0 +1,269 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main(){
+    int n,pbalance=50000,cbalance;
+   
+    cout<<""<<endl;
+    cout<<"==================================================\n";
+    cout << "                Bank Simulation" <<endl;
+    cout <<"==================================================\n";
+    cout<<"1.SAVINGS ACCOUNT"<<endl;
+    cout<<"2.CURRENT ACCOUNT"<<endl;
+    cout<<"3.DEPOSIT MONEY"<<endl;
+    cout<<"4.WITHDRAW MONEY"<<endl;
+    cout<<"5.KYC"<<endl;
+    cout<<"6.APPLY LOAN"<<endl;
+    cout<<"7.PENSION SCHEME"<<endl;
+    cout<<"8.APPLY CREDIT CARD"<<endl;
+    cout<<"9.APPLY DEBIT CARD"<<endl;
+    cout<<"10.EXIT"<<endl;
+    cout<<"Dear Customer What Would You Want To Operate:";
+    cin>>n;
+    int D;
+    if(n==1){
+        string name,DOB,Phone;
+        SA:
+        cout<<"Please Fill The Following Credentials To Open Saving Account"<<endl;
+        cout<<"Enter Your Name Here :";
+        cin>>name;
+        cout<<endl;
+        cout<<"Enter Your Date Of Birth Here (DD/MM/YYYY):";
+        cin>>DOB;
+        cout<<endl;
+        cout<<"Enter Your Phone Number Here : ";
+       cin>>Phone;
+        cout<<endl;
+        cout<<"Submit Your Aadhar Zerox And Passport Size Photo At Table 1"<<endl;
+        cout<<"Press 1 if you submit the required documnets:";
+        cin>>D;
+        if(D==1)
+        cout<<"Your Account has been Created Succesfully!";
+        else{
+        cout<<"Please submit your required documents."<<endl;
+        goto SA;}
+        
+    }
+    else if(n==2){
+        int business;
+        cout<<"Do You have any Bussiness ? If yes then press 1."<<endl;
+        cin>>business;
+        if(business==1)
+        cout<<"You Are Eligible To open Current Account and Submit Your Required Documents";
+        else
+        cout<<"You Are not Eligible To open Current Account";
+    }
+    else if(n==3){
+        int amount;
+        cout<<"Enter the amount to deposit Money:";
+        cin>>amount;
+        cbalance=pbalance+amount;
+        cout<<"Your Money Has Been Deposited And Your Current Balance is:"<<cbalance;
+}
+    else if(n==4){
+        int amount;
+        cout<<"Enter the amount to Widrawl Money:";
+        cin>>amount;
+        cbalance=pbalance-amount;
+        cout<<"Collect Your Cash And Your Current Balance is:"<<cbalance;
+    }
+    else if(n==5){
+       string name,Phone;
+       int verify,n,m;
+       D:
+       cout<<"--Customer Registration--"<<endl;
+        cout<<"Enter Your Name Here:";
+       cin>>name;
+        cout<<"Enter Your Phone Number Here:";
+      cin>>Phone;
+      cout<<endl;
+      cout<<"--Document Verification--"<<endl;
+      cout<<"Submit Your Aadhar Zerox And Passport Size Photo! If You had Submitted successfully Press 1 :";
+      cin>>n;
+      if(n==1)
+{        cout<<"Your Documents Have Been Submitted!"<<endl;
+         cout<<"Name:"<<name<<endl;
+         cout<<"Mobile Number:"<<Phone<<endl;
+         
+}    
+       else{
+       cout<<"Please Submit Your Documents For Verification! "<<endl;
+       goto D;}
+       cout<<"Check Your KYC Approval? If You Submit Your Documents Press 1 :";
+       cin>>m;
+       if(m==1){
+       cout<<"Your KYC Has Been Approved";
+}
+else
+cout<<"Your KYC Have Been Not Approved";
+
+    }
+    else if(n==6){
+        int input;
+        cout<<"Press 1.For Home Loan"<<endl;
+        cout<<"Press 2.For Car Loan"<<endl;
+        cout<<"Press 3.Study Loan"<<endl;
+        cin>>input;
+        if(input==1){
+            int amount,age,ITR;
+            cout<<"Enter The Amount Of Loan:";
+            cin>>amount;
+            cout<<"Enter Your Age:";
+            cin>>age;
+            cout<<"Enter Your ITR Amount Per Year :";
+            cin>>ITR;
+            if(amount>1000000 && age>=40 && ITR<=10000)
+            cout<<"Sorry Your Loan Cannot Be Approved !";
+            else if(amount>1000000 && age>=18 &&age <=40 && ITR>=500000)
+            cout<<"Congratulations! Your Loan Has Been Approved";
+        }
+        else if(input==2){
+            int input1,amount1,age,n,ITR1;
+            cout<<"Do You Have Your Own House ? If Yes press 1";
+            cin>>n;
+            if(n==1){
+            cout<<"You Are Eligible For Car Loan"<<endl;
+            cout<<"Enter The Amount Of Loan:";
+            cin>>amount1;
+            cout<<"Enter Your Age:";
+            cin>>age;
+             cout<<"Enter Your ITR Amount Per Year :";
+            cin>>ITR1;
+            if(amount1>=1500000 && age>=40 && ITR1<=100000)
+            cout<<"Sorry Your Loan Cannot Be Approved !";
+            else if(amount1>1500000 && age>=18 &&age <=40 && ITR1>=500000)
+            cout<<"Congratulations! Your Loan Has Been Approved";
+            
+                
+            }
+            else
+            cout<<"You Are Not Eligible For Car Loan Acc. To T&C"<<endl;
+        }
+        else if(input==3){
+            int h,tmarks,twmarks,FSem;
+            cout<<" Are You Doing Higher Studeis ? Press 1 If yes :";
+            cin>>h;
+            if(h==1){int amount,age;
+                 cout<<"Enter The Amount Of Loan:";
+            cin>>amount;
+            cout<<"Enter Your Age:";
+            cin>>age;
+                cout<<"Enter Your 10th Marks:";
+                cin>>tmarks;
+                 cout<<"Enter Your 12th Marks:";
+                cin>>twmarks;
+                 cout<<"Enter Your 1st Semester Marks:";
+                cin>>FSem;
+                if(tmarks>=95 && twmarks>=90 && FSem>=10)
+                cout<<"You  Are Eligible For Study Loan";
+                else
+                cout<<"You Are Not Eligible For Study Loan";
+            }
+            else
+             cout<<"You Are Not Eligible For Study Loan";
+        }
+    } else if(n==7)
+    { int n;
+         cout<<"Press 1.To create pension account"<<endl;
+         cout<<"Press 2.To withdraw pension amount"<<endl;
+         cin>>n;
+         if(n==1){
+             string name,DOB,Phone,email;
+             int age;
+         cout<<"Enter Your Name Here :";
+        cin>>name;
+        cout<<endl;
+        cout<<"Enter Your Date Of Birth Here (DD/MM/YYYY):";
+        cin>>DOB;
+        cout<<endl;
+        cout<<"Enter Your Phone Number Here : ";
+       cin>>Phone;
+        cout<<endl;
+        cout<<"Enter Your E-Mail Number Here : ";
+       cin>>email;
+        cout<<endl;
+        cout<<"Enter Your Age Here :";
+        cin>>age;
+        cout<<endl;
+        if(age>=50){
+            cout<<"You are eligible for pension account"<<endl;
+            cout<<"Submit your required documents at counter 1"<<endl;
+        }
+        else 
+        cout<<"You are not eligible";
+             
+         }
+         else if(n==2){
+             int amount,pbalance=10000;
+        cout<<"Enter the amount to Withrawl Money:";
+        cin>>amount;
+        cbalance=pbalance-amount;
+        cout<<"Collect Your Cash And Your Current Balance is:"<<cbalance;
+             
+         }
+        else
+        cout<<"Please enter a valid input";
+    }
+    
+    else if(n==8){
+        string name,DOB,Phone,email;
+        int n;
+         cout<<"Enter Your Name Here :";
+        cin>>name;
+        cout<<endl;
+        cout<<"Enter Your Date Of Birth Here (DD/MM/YYYY):";
+        cin>>DOB;
+        cout<<endl;
+        cout<<"Enter Your Phone Number Here : ";
+       cin>>Phone;
+        cout<<endl;
+        cout<<"Enter Your E-Mail Number Here : ";
+       cin>>email;
+        cout<<endl;
+        cout<<"Press 1. If You Want to VISA Card"<<endl;
+        cout<<"Press 2. If You Want to RuPay Card"<<endl;
+        cin>>n;
+        if(n==1||n==2){
+            cout<<"Congratulations! Your Application Form has been submitted"<<endl;
+            cout<<"Please Submit Your Documents and You Will Be notified Via Email or Via Phone Number";
+        }
+        else
+        cout<<"Please Enter A valid Input ";
+    }
+    else if(n==9){
+        string name,DOB,Phone,email;
+        int n,age;
+         cout<<"Enter Your Name Here :";
+        cin>>name;
+        cout<<endl;
+        cout<<"Enter Your Date Of Birth Here (DD/MM/YYYY):";
+        cin>>DOB;
+        cout<<endl;
+        cout<<"Enter Your Phone Number Here : ";
+       cin>>Phone;
+        cout<<endl;
+        cout<<"Enter Your E-Mail Number Here : ";
+       cin>>email;
+        cout<<endl;
+        cout<<"Enter Your Age Here :";
+        cin>>age;
+        cout<<endl;
+        if(age>=18){
+            cout<<"You Are Eligible For Applying Debit Card"<<endl;
+             cout<<"Press 1. If You Want to VISA Card"<<endl;
+             cout<<"Press 2. If You Want to RuPay Card"<<endl;
+             cin>>n;
+             if(n==1||n==2){
+            cout<<"Congratulations! Your Application Form has been submitted."<<endl;
+            cout<<"Please Submit Your Documents and You Will Be notified Via Email or Via Phone Number";
+        }else
+        cout<<"Please enter a valid input";
+        }
+        else
+        cout<<"You Are Not Eligible For Applying Debit Card";
+        
+    }
+    else if(n==10){
+        exit;
+    }
+}
