@@ -1,0 +1,25 @@
+#include<iostream>
+ #include<string.h>
+ using namespace std;
+ int main(){
+ string line;
+ cout << "Enter Your Line Here: ";
+ getline(cin,line);
+ int ws=0,v=0,d=0,con=0;
+ for (char c: line){
+ if( c== 'a' ||c== 'e' || c== 'i' || c== 'o' || c== 'u')
+ v++;
+ else if(c==' ')
+ ws++;
+ else if(c-'0' >=0 && c-'0'<=9)
+ d++;
+ else if((c >='A' && c<='Z') || (c>='a' && c<='z'))
+ con++;
+ }
+ cout << "In Given Line : "<<endl;
+ cout << "White Spaces: " <<ws<<endl;
+ cout << "Vowels: " <<v<<endl;
+ cout << "Digits: "<< d<<endl;
+ cout << "Consonants: "<< con <<endl;
+ return 0;
+ }
