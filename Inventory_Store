@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+using namespace std;
+const int max_items = 20;
+struct Item {
+    string name;
+    int quantity;
+    double price;
+};
+void addItem(Item items[], int& itemCount) {
+    if (itemCount < max_items) {
+        cout << "Enter item name: ";
+        cin >> items[itemCount].name;
+        cout << "Enter item quantity: ";
+        cin >> items[itemCount].quantity;
+        cout << "Enter item price: $";
+        cin >> items[itemCount].price;
+        itemCount++;
+    } else {
+        cout << "Inventory is full!" << endl;
+    }
+}
+void displayInventory(const Item items[], int itemCount) {
+    cout << "\nInventory:\n";
+    cout << "---------------------------------\n";
+    for (int i = 0; i < itemCount; i++) {
+        cout << "Item Name: " << items[i].name << endl;
+        cout << "Quantity: " << items[i].quantity << endl;
+        cout << "Price: $" << items[i].price << endl;
+        cout << "---------------------------------\n";
+    }
+}
+int main() {
+    Item items[max_items];
+    int itemCount = 0;
+    int choice;
+    do {
+        cout << "\nINVENTORY MANAGEMENT SYSTEM\n";
+        cout << "1. Add Item\n";
+        cout << "2. Display Inventory\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                addItem(items, itemCount);
+                break;
+            case 2:
+                displayInventory(items, itemCount);
+                break;
+            case 3:
+                cout << "Exiting" << endl;
+                break;
+            default:
+                cout << "Invalid choice, please try again." << endl;
+        }
+    } while (choice != 3);
+    return 0;
+}
