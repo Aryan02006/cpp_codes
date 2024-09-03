@@ -1,0 +1,21 @@
+#include<iostream>
+ using namespace std;
+ class Room{
+ public:
+ double height,len,brd;
+ double area(){
+ return len*brd;
+ }
+ double volume(){
+ return len*brd*height;
+ }
+ };
+ int main(){
+ Room room1;
+ room1.len = 15;
+ room1.brd = 25;
+ room1.height = 16;
+ cout << "\nArea of Room is: "<< room1.area();
+ cout << "\nVolume of Room is: "<< room1.volume() << endl;
+ return 0;
+ }
