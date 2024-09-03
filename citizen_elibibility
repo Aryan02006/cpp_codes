@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() {
+    char input = 'Y';
+    int age;
+    while (input == 'Y') {
+        cout << "Enter your age: ";
+        cin >> age;
+        if (age >= 18) {
+            cout << "You are eligible to vote." << endl;
+            cout << "Have you already voted? (Y/N): ";
+        cin >> input;
+        if (input == 'Y') {
+            cout << "Your vote matters! Keep making your voice heard" << endl;
+        }
+        else {
+            cout << "Please Vote! Every vote matters!" << endl;
+        }
+        break;
+        }
+        else {
+            cout << "You are not eligible to vote." << endl;
+            break;
+        }
+    }
+    return 0;
+}
