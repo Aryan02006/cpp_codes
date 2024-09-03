@@ -1,0 +1,22 @@
+#include <iostream> 
+using namespace std; 
+int main() { 
+int n, i; 
+float arr[500], sum = 0, average; 
+cout << "Enter the numbers of elements in the array: "; 
+cin >> n; 
+while (n > 500 || n <= 0) { 
+cout << "Error! Number should be in range of (1 to 500)." << endl; 
+cout << "Enter the number again: "; 
+cin >> n; 
+} 
+cout << "Enter elements of the Array: ";
+for(i = 0; i < n; ++i) {
+cin >> arr[i]; 
+sum += arr[i]; 
+} 
+average = sum / n; 
+cout << "The Sum of the Array Elements is : " << sum << "\n";
+cout << "The Average of the Array Elements is : " << average << "\n"; 
+return 0; 
+}
