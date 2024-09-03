@@ -1,0 +1,15 @@
+#include<iostream>
+ using namespace std;
+ int main(){
+ int num1 = 10;
+ char a = 'A';
+ num1 += a;
+ cout<< "\nImplicit Type Conversion: \n";
+ cout << "Final Value of Number(10) as 'A' ASCII Code is 65 (A+10): "<< num1<< endl;
+ cout<< "\nExplicit Type Conversion: \n";
+ double num2 = 9.99;
+ num1= int(num2);
+ cout << "Floatting Point is: "<< num2 <<endl;
+ cout << "Integer is: "<< num1 <<endl;
+ return 0;
+ }
