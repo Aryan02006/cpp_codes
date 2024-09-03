@@ -1,0 +1,32 @@
+#include <iostream>
+ #include <string.h>
+ using namespace std;
+ int main(){
+ int ch;
+ float movieratings[5] = {4.0, 4.2, 4.5, 4.8, 4.9};
+ cout << "\nFollowings Movie Ratings are Available: ";
+ cout << "\n1.Jatt & Juliet 3\n2.Fighter\n3.Deadpool & Wolverine\n4.Kalki\n5.Money Heist";
+ cout << "\n Choose: ";
+ cin >> ch;
+ switch (ch) {
+ case 1:
+ cout << "The Movie Rating is: " << movieratings[0]<<endl;
+ break;
+ case 2:
+ cout << "The Movie Rating is: " << movieratings[1]<<endl;
+ break;
+ case 3:
+ cout << "The Movie Rating is: " << movieratings[2]<<endl;
+ break;
+ case 4:
+ cout << "The Movie Rating is: " << movieratings[3]<<endl;
+ break;
+ case 5:
+ cout << "The Movie Rating is: " << movieratings[4]<<endl;
+ break;
+ default:
+cout << "Please Enter a Valid Choice";
+ break;
+ }
+ return 0;
+ }
