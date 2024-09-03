@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int i , option , user_pin;
+    int pin = 4362;
+    int attempts = 3;
+    float mod_balance = 600000.00;
+    float withdrawl_amt , rem_balance , dep_amt;
+    cout<<"WELCOME TO ATM STIMULATOR\n";
+    cout<<"Please Enter your ATM Card .......\n";
+    cout<<"Enter your ATM Pin : ";
+    cin>>user_pin;
+    for(i=1;i<=attempts; i++){
+        if(pin == user_pin){
+    cout<<"ACCESS GRANTED.\n";
+    cout<<"Which operation do you want : \n";
+    cout<<"1.Withdraw Money\n";
+    cout<<"2.Deposit Money\n";
+    cout<<"3.Check Balance\n";
+    cout<<"4.Logout.\n";
+    cin>>option;
+    break;
+        }
+        else {
+            cout<<"    Invalid PIN.\n     Try Again \n";
+            break;
+        }
+        if(i>=attempts){
+            cout<<"TOO MANY ATTEMPTS.\n ACCESS DENIED \n";
+        }
+    }
+    switch(option){
+        case 1:
+        cout<<"Enter Amount that you want to withdraw : ";
+        cin>>withdrawl_amt;
+        if(withdrawl_amt <= mod_balance){
+            cout <<"TRANSACTION SUCCESSFUL\n";
+        }
+        else {
+            cout<<"INSUFFICIENT BALANCE\n";}
+   rem_balance = mod_balance - withdrawl_amt;
+cout<<"Your Remaining Balance is "<< rem_balance << endl;
+        break;
+     
+        case 2:
+        cout << "Enter amount to be Deposited : ";
+		cin >> dep_amt;
+        mod_balance = dep_amt + mod_balance;
+        cout << "\nTotal balance is: " << mod_balance;
+        
+        case 3:
+        cout<<"Your Availabe Balance is : " << mod_balance <<endl;
+        break;
+        
+        case 4: 
+        cout <<"You Had Successfully logged Out.";
+        break;
+        
+    default :
+    cout<<"INVALID OPTION \n" << endl;
+    }
+}
