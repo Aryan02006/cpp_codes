@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int x;
+    float radius, l, b, side;
+    cout << "Operation you want to do : \n";
+    cout << "1. Area Of circle\n";
+    cout << "2. Area of Rectangle\n";
+    cout << "3. Area of Square\n";
+    cin >> x;
+    switch (x) {
+    case 1:
+        cout << "Enter Radius : ";
+        cin >> radius;
+        cout << "Area of Circle is " << 3.14 * radius * radius;
+        break;
+    case 2:
+        cout << "Enter Length & Breath : ";
+        cin >> l >> b;
+        cout << "Area of Rectangle is " << l * b;
+        break;
+    case 3:
+        cout << "Enter Side : ";
+        cin >> side;
+        cout << "Area of Square is " << side * side;
+        break;
+    default:
+        cout << "Invalid Input";
+    }
+    return 0;
+}
