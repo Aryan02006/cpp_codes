@@ -1,0 +1,39 @@
+#include <iostream>
+ #include <string.h>
+ using namespace std;
+ int main()
+ {
+ int size = 5;
+ char user[size][30] = {"Aryan", "Ankita", "Robin"};
+ char name1[30];
+ cout << "\nEnter Employee username: ";
+ cin >> name1;
+ for (int i = 0; i < size; i++)
+ {
+ if (strcmp(user[i], name1) == 0)
+ {
+ float salary = 45607;
+ int da = 7500, hra = 4000;
+ salary+=da+hra;
+ int ch;
+ cout << "Is You Want to Enter Bonus: \n 1.Yes\n 2.No, Move Further\nChoose: ";
+ cin >> ch;
+ if (ch == 1)
+ {
+ int bonus, per;
+ cout << "Enter the Bonus in Percentage: ";
+ cin >> per;
+ bonus = (salary * per) / 100;
+ salary += bonus;
+ }
+ int leaves;
+cout << "Enter No. of Leaves(One Leave will Deduct 500 Rupees): ";
+ cin >> leaves;
+ salary-= leaves * 500;
+ cout << "Total Salary of " << user[i] << " is : " << salary<<endl;
+ return 0;
+ }
+ }
+ cout << "\nEnter Correct Username";
+ return 0;
+ }
