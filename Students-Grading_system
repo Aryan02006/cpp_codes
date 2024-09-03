@@ -1,0 +1,87 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+    float marks[8];
+    string name;
+    cout << "---------------------------------------------------" << endl;
+    cout << "     Welcome to Students Grading System       " << endl;
+    cout << "---------------------------------------------------" << endl;
+    cout << "Enter your Name : ";
+    getline(cin, name);
+    cout << "Enter marks(Internal + External) of :" << endl;
+    cout << "1. Physics :";
+    cin >> marks[0];
+    cout << "2. Math-1 : ";
+    cin >> marks[1];
+    cout << "3. PEEM : ";
+    cin >> marks[2];
+    cout << "4. BEE : ";
+    cin >> marks[3];
+    cout << "5. EGD : ";
+    cin >> marks[4];
+    cout << "6. Physics Lab : ";
+    cin >> marks[5];
+    cout << "7. BEE Lab : ";
+    cin >> marks[6];
+    cout << "8. Mentoring : ";
+    cin >> marks[7];
+    string grades[8];
+    for(int i = 0; i < 8; i++) {
+        if((i >= 0 && i <= 4) || i == 7) {
+            if(marks[i] >= 90) grades[i] = "O";
+            else if(marks[i] >= 80) grades[i] = "A+";
+            else if(marks[i] >= 70) grades[i] = "A";
+            else if(marks[i] >= 60) grades[i] = "B+";
+            else if(marks[i] >= 50) grades[i] = "B";
+            else if(marks[i] >= 40) grades[i] = "C";
+            else if(marks[i] >= 24) grades[i] = "P";
+            else grades[i] = "F";
+        } else {
+            if(marks[i] >= 45) grades[i] = "O";
+            else if(marks[i] >= 40) grades[i] = "A+";
+            else if(marks[i] >= 35) grades[i] = "A";
+            else if(marks[i] >= 30) grades[i] = "B+";
+            else if(marks[i] >= 25) grades[i] = "B";
+            else if(marks[i] >= 20) grades[i] = "C";
+            else if(marks[i] >= 12) grades[i] = "P";
+            else grades[i] = "F";
+        }
+    }
+    cout << endl << name << " Your Grades are : " << endl;
+    cout << "1. Physics :" << grades[0] << endl;
+    cout << "2. Math-1 : " << grades[1] << endl;
+    cout << "3. PEEM : " << grades[2] << endl;
+    cout << "4. BEE : " << grades[3] << endl;
+    cout << "5. EGD : " << grades[4] << endl;
+    cout << "6. Physics Lab : " << grades[5] << endl;
+    cout << "7. BEE Lab : " << grades[6] << endl;
+    cout << "8. Mentoring : " << grades[7] << endl;
+    int point[8];
+    for(int i = 0; i < 8; i++) {
+        if(grades[i] == "O") point[i] = 10;
+        else if(grades[i] == "A+") point[i] = 9;
+        else if(grades[i] == "A") point[i] = 8;
+        else if(grades[i] == "B+") point[i] = 7;
+        else if(grades[i] == "B") point[i] = 6;
+        else if(grades[i] == "C") point[i] = 5;
+        else if(grades[i] == "P") point[i] = 4;
+        else point[i] = 0;
+    }
+    int credit[8] = {4, 4, 3, 4, 3, 1, 1, 1};
+    int score[8];
+    for(int i = 0; i < 8; i++) {
+        score[i] = credit[i] * point[i];
+    }
+    float total_score = 0, total_credit = 0;
+    for(int i = 0; i < 8; i++) {
+        total_score += score[i];
+    }
+    for(int i = 0; i < 8; i++) {
+        total_credit += credit[i];
+    }
+    float sgpa = total_score / total_credit;
+    cout << endl << "Congratulations! " << name << " you got " << fixed << setprecision(3) << sgpa << " SGPA" << endl;
+    
+    return 0;
+}
